@@ -1,0 +1,14 @@
+[debug] [2023-04-03T16:48:35.045Z] ----------------------------------------------------------------------
+[debug] [2023-04-03T16:48:35.047Z] Command:       /home/reima/.nvm/versions/node/v18.14.2/bin/node /home/reima/.nvm/versions/node/v18.14.2/bin/firebase deploy
+[debug] [2023-04-03T16:48:35.048Z] CLI Version:   11.24.0
+[debug] [2023-04-03T16:48:35.048Z] Platform:      linux
+[debug] [2023-04-03T16:48:35.048Z] Node Version:  v18.14.2
+[debug] [2023-04-03T16:48:35.049Z] Time:          Mon Apr 03 2023 19:48:35 GMT+0300 (Eastern European Summer Time)
+[debug] [2023-04-03T16:48:35.049Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-03T16:48:40.117Z] Error: Timed out.
+    at Timeout._onTimeout (/home/reima/.nvm/versions/node/v18.14.2/lib/node_modules/firebase-tools/lib/utils.js:253:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.

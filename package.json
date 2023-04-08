@@ -1,0 +1,19 @@
+{
+  "name": "metaobject-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "create": "node createObjects.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/shopify-api": "^6.2.0",
+    "nodeman": "^1.1.2",
+    "shopify-api-node": "^3.12.3"
+  },
+  "type": "module"
+}
