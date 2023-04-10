@@ -5,24 +5,6 @@ import fs from 'fs';
 const shopGraphQl = "https://vtopo.myshopify.com/admin/api/2023-01/graphql.json"; // VTOPO
 const accessToken = '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'; // VTOPO
 
-// const shopGraphQl = "https://reima-benson.myshopify.com/admin/api/2023-01/graphql.json"; // Reima Benson
-// const accessToken = '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'; // Reima Benson
-
-/**
- * Mapping metaobject for validation NC replace to "" blank value
- */
-
-/**
-    value: `{{ itineraire.titre.value }}`
-    value: `{{ itineraire.discipline.value }}`
-    value: `{{ itineraire.niveau.value }}`
-    value: `{{ itineraire.distance.value }} km`
-    value: `{{ itineraire.denivelee_positive.value }}m`
-    value: `{{ itineraire.horaire.value }}`
-    value: `{{ itineraire.pays.value }}`
-    value: `{{ itineraire.region.value }}`
-    value: `{{ itineraire.departement.value }}`
-*/
 
 const handleArr = [];
 
