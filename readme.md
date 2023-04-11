@@ -34,7 +34,7 @@ const accessToken = `YOUR_TOKEN_HERE`;
 ```shell
 npm run create-metaobject
 ```
-<span>You can find occured errors in `log.txt` file.</span>
+<span>You can find occurred errors in `log.txt` file.</span>
 
 **Create JSON**
 
