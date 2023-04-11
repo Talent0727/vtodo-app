@@ -19,10 +19,10 @@ export default [
 ]
 ```
 
-```node
+```shell
 npm run create-metaobject
 ```
 
-```node
+```shell
 npm run create-json
 ```
