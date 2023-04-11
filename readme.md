@@ -1,7 +1,7 @@
 ## Vtopo Metaobject App
 ---
 
-**Export your metaobjects as JSON in this file `./metaobject/metaobject.js` **
+**Export your metaobjects as JSON in this file `./metaobject/metaobject.js`**
 
 ```javascript
 export default [
