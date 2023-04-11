@@ -1,5 +1,4 @@
 ## Vtopo Metaobject App
----
 
 **Export your metaobjects as JSON in this file `./metaobject/metaobject.js`**
 
