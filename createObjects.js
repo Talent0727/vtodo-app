@@ -2,15 +2,15 @@ import metaObjects from "./metaobject/metaobject.js";
 import graphQL from './graphql.js';
 import fs from 'fs';
 
-const shopGraphQl = `https://{YOUR_STORE_DOMAIN}/admin/api/2023-01/graphql.json`;
-const accessToken = `YOUR_TOKEN_HERE`;
+const shopGraphQl = "https://vtopo.myshopify.com/admin/api/2023-01/graphql.json";
+const accessToken = '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';
 
 metaObjects.forEach((item, ind, obj) => {
     
     const fields = new Map();
 
     item.metaobject.fields.forEach((field, index, arr) => {
-        //custom validation for VTOPO data
+        
         if (field.value == 'NC') arr[index].value = "";
         if (field.value == 'NS') arr[index].value = "";
         if (field.value == '.') arr[index].value = "";

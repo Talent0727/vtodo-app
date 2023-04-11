@@ -16,7 +16,7 @@ export default [
 ]
 ```
 
-**Replace with your accessToken in `createObject.js` file**
+**Replace with your accessToken in `createObject.js` file with metaobject create permission**
 
 ```javascript
 const shopGraphQl = `https://{YOUR_STORE_DOMAIN}/admin/api/2023-01/graphql.json`; 
