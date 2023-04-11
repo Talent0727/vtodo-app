@@ -2,8 +2,8 @@ import metaObjects from "./metaobject/metaobject.js";
 import graphQL from './graphql.js';
 import fs from 'fs';
 
-const shopGraphQl = "https://vtopo.myshopify.com/admin/api/2023-01/graphql.json";
-const accessToken = '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';
+const shopGraphQl = `https://{YOUR_DOMAIN_HERE}/admin/api/2023-01/graphql.json`;
+const accessToken = `YOUR_TOKEN_HERE`;
 
 metaObjects.forEach((item, ind, obj) => {
     
