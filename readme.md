@@ -5,7 +5,7 @@
 ./metaobject/metaobject.js
 ```
 
-```
+```javascript
 export default [
     {
         ...
@@ -19,10 +19,10 @@ export default [
 ]
 ```
 
-```
+```node
 npm run create-metaobject
 ```
 
-```
+```node
 npm run create-json
 ```
