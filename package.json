@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "create": "node createObjects.js"
+    "create-metaobject": "node createObjects.js",
+    "create-json": "node index.js"
   },
   "author": "",
   "license": "ISC",

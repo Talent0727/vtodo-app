@@ -1,2 +1,0 @@
-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 // vtopo
-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 // reima-benson

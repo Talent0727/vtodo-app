@@ -1,10 +1,5 @@
 import metaObjects from "./metaobject/metaobject.js";
-import graphQL from './graphql.js';
 import fs from 'fs';
-
-const shopGraphQl = "https://vtopo.myshopify.com/admin/api/2023-01/graphql.json"; // VTOPO
-const accessToken = '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'; // VTOPO
-
 
 const handleArr = [];
 
@@ -136,9 +131,7 @@ handleArr.map(itineraire => {
   ]);
 });
 
-var stream = fs.createWriteStream("metaobjects.txt");
-
-// delete metaobjectData[1693];
+var stream = fs.createWriteStream("metaobjects-json.txt");
 
 stream.once('open', function(fd) {
     stream.write(`${JSON.stringify(metaobjectData)}`);

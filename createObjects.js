@@ -2,33 +2,15 @@ import metaObjects from "./metaobject/metaobject.js";
 import graphQL from './graphql.js';
 import fs from 'fs';
 
-const shopGraphQl = "https://vtopo.myshopify.com/admin/api/2023-01/graphql.json"; // VTOPO
-const accessToken = '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'; // VTOPO
-
-// const shopGraphQl = "https://reima-benson.myshopify.com/admin/api/2023-01/graphql.json"; // Reima Benson
-// const accessToken = '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'; // Reima Benson
-
-/**
- * Mapping metaobject for validation NC replace to "" blank value
- */
-
-/**
-    value: `{{ itineraire.titre.value }}`
-    value: `{{ itineraire.discipline.value }}`
-    value: `{{ itineraire.niveau.value }}`
-    value: `{{ itineraire.distance.value }} km`
-    value: `{{ itineraire.denivelee_positive.value }}m`
-    value: `{{ itineraire.horaire.value }}`
-    value: `{{ itineraire.pays.value }}`
-    value: `{{ itineraire.region.value }}`
-    value: `{{ itineraire.departement.value }}`
-*/
-
-const handleArr = [];
+const shopGraphQl = "https://vtopo.myshopify.com/admin/api/2023-01/graphql.json";
+const accessToken = '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';
 
 metaObjects.forEach((item, ind, obj) => {
+    
     const fields = new Map();
+
     item.metaobject.fields.forEach((field, index, arr) => {
+        
         if (field.value == 'NC') arr[index].value = "";
         if (field.value == 'NS') arr[index].value = "";
         if (field.value == '.') arr[index].value = "";
@@ -44,7 +26,9 @@ metaObjects.forEach((item, ind, obj) => {
               arr[index].value = splitArr[0];
           }
         }    
+    
     });
+    
     obj[ind].metaobject = item.metaobject;
 });
 
@@ -55,12 +39,12 @@ async function createMetaObject(indexOfMetaObjectArray, debug) {
      * Create log file once function ended.
      */
     if (metaObjects.length == indexOfMetaObjectArray) {
+        
         var stream = fs.createWriteStream("log.txt");
-        stream.once('open', function(fd) {
+        
+        stream.once('open', function() {
             stream.write("[\n");
-            errorIndexs.map(item => {
-                stream.write(`${JSON.stringify(item)}\n,`);
-            });
+            errorIndexs.map(item => stream.write(`${JSON.stringify(item)}\n,`));
             stream.write("]\n");
             stream.end();
         });
@@ -119,4 +103,4 @@ async function createMetaObject(indexOfMetaObjectArray, debug) {
     });
 }
 
-await createMetaObject(59);
+await createMetaObject(0);
