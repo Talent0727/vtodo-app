@@ -22,32 +22,38 @@ metaObjects.forEach((item, ind, obj) => {
               arr[index].value = splitArr[0];
           }
         }
-        if (field.key != 'profil') {
+        if (field.key != 'profil' && field.key != 'photo') {
           field.value = field.value.replace(`\"]`, '');
           field.value = field.value.replace(`[]`, '');
           arr[index].value = field.value.replace(`[\"`, '');
         } else {
-          field.value = JSON.parse(field.value);
-          arr[index].value = field.value;
+          if (field.value) {
+            field.value = JSON.parse(field.value);
+            arr[index].value = field.value;
+          } else arr[index].value = [];
         }
     });
     item.metaobject.fields.map(field => {
         fields.set(field.key, field.value);
     });
     handleArr.push({
-        handle:             item.metaobject.handle,
-        titre:              fields.get('titre'),
-        departement:        fields.get('departement'),
-        difficulte:         fields.get('difficulte'),
-        distance:           fields.get('distance'),
-        denivelee_positive: fields.get('denivelee_positive'),
-        denivelee_negative: fields.get('denivelee_negative'),
-        horaire:            fields.get('horaire'),
-        niveau:             fields.get('niveau'),
-        profil:             fields.get('profil'),
-        discipline:         fields.get('discipline'),
-        pays:               fields.get('pays'),
-        region:             fields.get('region')
+        handle:                       item.metaobject.handle,
+        titre:                        fields.get('titre'),
+        departement:                  fields.get('departement'),
+        difficulte:                   fields.get('difficulte'),
+        distance:                     fields.get('distance'),
+        denivelee_positive:           fields.get('denivelee_positive'),
+        denivelee_negative:           fields.get('denivelee_negative'),
+        horaire:                      fields.get('horaire'),
+        niveau:                       fields.get('niveau'),
+        profil:                       fields.get('profil'),
+        discipline:                   fields.get('discipline'),
+        pays:                         fields.get('pays'),
+        region:                       fields.get('region'),
+        longitude_du_point_de_depart: fields.get('longitude_du_point_de_depart'),
+        latitude_du_point_de_depart:  fields.get('latitude_du_point_de_depart'),
+        description:                  fields.get('description'),
+        photo:                        fields.get('photo')
     });
 });
 
@@ -93,19 +99,19 @@ handleArr.map(itineraire => {
       value: `${itineraire.difficulte}`
     },
     {
-      html: `${itineraire.distance ? itineraire.distance + 'km': ''}`,
+      html: `${itineraire.distance ? itineraire.distance + 'km': '0km'}`,
       value: `${itineraire.distance}`
     },
     {
-      html: `${itineraire.denivelee_positive ? itineraire.denivelee_positive + 'm': ''}`,
+      html: `${itineraire.denivelee_positive ? itineraire.denivelee_positive + 'm': '0m'}`,
       value: `${itineraire.denivelee_positive}`
     },
     {
-      html: `${itineraire.denivelee_negative ? itineraire.denivelee_negative + 'm': ''}`,
+      html: `${itineraire.denivelee_negative ? itineraire.denivelee_negative + 'm': '0m'}`,
       value: `${itineraire.denivelee_negative}`
     },
     {
-      html: `${(itineraire.horaire == "00:00" ? "" : itineraire.horaire)}`,
+      html: `${(itineraire.horaire == "00:00" ? "00:00" : itineraire.horaire)}`,
       value: `${countTime((itineraire.horaire == "00:00" ? "" : itineraire.horaire).replace(':',''))}`
     },
     {
@@ -127,6 +133,22 @@ handleArr.map(itineraire => {
     {
       html: ``,
       value: `${itineraire.region}`
+    },
+    {
+      html: ``,
+      value: `${itineraire.latitude_du_point_de_depart}`
+    },
+    {
+      html: ``,
+      value: `${itineraire.longitude_du_point_de_depart}`
+    },
+    {
+      html: ``,
+      value: `${itineraire.description}`
+    },
+    {
+      html: ``,
+      value: itineraire.photo
     }
   ]);
 });
