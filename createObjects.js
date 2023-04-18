@@ -34,6 +34,8 @@ metaObjects.forEach((item, ind, obj) => {
 
 let errorIndexs = [];
 
+console.log('Total number : ', metaObjects.length);
+
 async function createMetaObject(indexOfMetaObjectArray, debug) {
     /**
      * Create log file once function ended.

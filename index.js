@@ -4,7 +4,6 @@ import fs from 'fs';
 const handleArr = [];
 
 metaObjects.forEach((item, ind, obj) => {
-    if (ind == 1693) return;
     const fields = new Map();
     item.metaobject.fields.forEach((field, index, arr) => {
         if (field.value == 'NC') arr[index].value = "";
