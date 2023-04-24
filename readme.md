@@ -2,6 +2,7 @@
 
 **Export your metaobjects as JSON in this file `./metaobject/metaobject.js`**
 
+This is my vtodo-app
 ```javascript
 export default [
     {
